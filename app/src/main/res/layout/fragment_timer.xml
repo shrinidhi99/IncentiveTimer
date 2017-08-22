@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.coffeewarriors.incentivetimer.TimerFragment">
+
+    <View
+        android:id="@+id/align_view"
+        android:layout_width="50dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:id="@+id/donut_progress_timer"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+
+        android:layout_alignBottom="@+id/align_view"
+        android:layout_centerHorizontal="true"
+        app:donut_circle_starting_degree="270"
+        app:donut_finished_color="#cfcfcf"
+        app:donut_finished_stroke_width="7dp"
+        app:donut_progress="30"
+        app:donut_suffix_text=""
+        app:donut_text="25:00"
+        app:donut_text_color="@color/colorPrimary"
+        app:donut_text_size="@dimen/text_size_very_large"
+        app:donut_unfinished_color="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/breakImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_break"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/break_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/breakImage"
+        android:layout_centerHorizontal="true"
+        android:text="BREAK"
+        android:textAllCaps="true"
+        android:textColor="#FF12CF28"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/finished_pomodoros_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/align_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp"
+        android:text="0/4"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_large" />
+
+    <Button
+        android:id="@+id/start_stop_button"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/donut_progress_timer"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/button_start"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium" />
+
+    <Button
+        android:id="@+id/reset_timer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_stop_button"
+        android:layout_toStartOf="@+id/finished_pomodoros_text"
+        android:text="@string/button_reset_timer"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/skip_break_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reset_timer_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_skip_break"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/reset_pomodoros_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_stop_button"
+        android:layout_toEndOf="@+id/reset_timer_button"
+        android:text="@string/button_reset_pomodoros"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

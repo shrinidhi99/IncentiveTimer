@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="net.coffeewarriors.incentivetimer.NewIncentiveFragment"
+    android:clickable="true">
+
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:imeOptions="actionDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/edit_name"
+        android:textCursorDrawable="@drawable/edit_text_cursor"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:paddingStart="5dp"
+        android:text="@string/chance"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/new_incentive_chance_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="0%"
+        android:textColor="@android:color/white" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignStart="@+id/textView3"
+        android:theme="@style/WhiteAccent"
+        android:layout_below="@+id/textView3" />
+
+    <Button
+        android:id="@+id/add_incentive_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/seekBar"
+        android:layout_below="@+id/seekBar"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toStartOf="@+id/close_image_new"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/add"
+        android:textColor="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/close_image_new"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/add_incentive_button"
+        android:layout_alignEnd="@+id/seekBar"
+        android:layout_alignTop="@+id/add_incentive_button"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/close_text_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/close_image_new"
+        android:layout_below="@+id/close_image_new"
+        android:layout_toEndOf="@+id/add_incentive_button"
+        android:gravity="center_horizontal"
+        android:text="@string/close"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

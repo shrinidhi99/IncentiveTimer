@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Incentive Timer</string>
+    <string name="title_timer">Timer</string>
+    <string name="title_incentives">Incentives</string>
+    <string name="title_settings">Settings</string>
+
+    <string name="chance">Chance:</string>
+    <string name="no_name">No Name</string>
+    <string name="unlocked">UNLOCKED</string>
+    <string name="edit_name">Edit Name</string>
+    <string name="save">SAVE</string>
+    <string name="add">ADD</string>
+    <string name="delete">DELETE</string>
+    <string name="close">CLOSE</string>
+    <string name="empty_list">Add Incentives and unlock them by finishing Pomodoros!</string>
+
+
+    <string name="button_start">START</string>
+    <string name="button_pause">PAUSE</string>
+    <string name="button_reset_timer">RESET TIMER</string>
+    <string name="button_reset_pomodoros">RESET POMODOROS</string>
+    <string name="button_skip_break">SKIP BREAK</string>
+
+    <string name="pomodoro_length">Length Pomodoro:</string>
+    <string name="short_break_lenght">Length short Break:</string>
+    <string name="long_break_length">Length long Break:</string>
+    <string name="min">min</string>
+    <string name="timer_change_warning">Changing a running timer will reset it.</string>
+
+</resources>

@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="net.coffeewarriors.incentivetimer.NewIncentiveFragment"
+    android:clickable="true">
+
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/edit_name"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textCursorDrawable="@drawable/edit_text_cursor" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edit_name"
+        android:layout_below="@+id/edit_name"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:paddingStart="5dp"
+        android:text="@string/chance"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/edit_chance_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_seekBar"
+        android:layout_centerHorizontal="true"
+        android:text="0%"
+        android:textColor="@android:color/white" />
+
+    <SeekBar
+        android:id="@+id/edit_seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_name"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:theme="@style/WhiteAccent" />
+
+    <Button
+        android:id="@+id/save_incentive_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edit_seekBar"
+        android:layout_below="@+id/edit_seekBar"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toStartOf="@+id/delete_image"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/save"
+        android:textColor="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/delete_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/save_incentive_button"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/close_image_edit"
+        app:srcCompat="@drawable/ic_delete" />
+
+    <TextView
+        android:id="@+id/delete_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/save_incentive_button"
+        android:layout_toEndOf="@+id/save_incentive_button"
+        android:gravity="center_horizontal"
+        android:text="@string/delete"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/close_image_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/save_incentive_button"
+        android:layout_alignEnd="@+id/edit_seekBar"
+        android:layout_alignTop="@+id/save_incentive_button"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/close_text_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/close_image_edit"
+        android:layout_below="@+id/close_image_edit"
+        android:layout_toEndOf="@+id/delete_image"
+        android:gravity="center_horizontal"
+        android:text="@string/close"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
