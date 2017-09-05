@@ -173,14 +173,11 @@ public class TimerFragment extends Fragment {
     public void onPause() {
         super.onPause();
         saveTimerStats();
-        pauseTimerFragmentChange();
+     //   pauseTimerFragmentChange();
         mFragmentInactive = true;
-
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this
@@ -463,6 +460,12 @@ public class TimerFragment extends Fragment {
 
     public void playBreakOverSound() {
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.breakover);
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer = null;
+            }
+        });
         mediaPlayer.start();
     }
 

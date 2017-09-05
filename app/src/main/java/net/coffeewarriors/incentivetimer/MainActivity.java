@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements TimerFragment.OnFragmentInteractionListener, IncentivesFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener, NewIncentiveFragment.OnFragmentInteractionListener, EditIncentiveFragment.OnFragmentInteractionListener {
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         transaction.replace(R.id.content, incentivesFragment);
      //   transaction.addToBackStack(null);
         transaction.commit();
+        timerPausedToast();
     }
 
     public void openNewIncentiveFragment() {
@@ -140,6 +142,12 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         transaction.replace(R.id.content, settingsFragment);
         if (newIncentiveFragment != null) transaction.remove(newIncentiveFragment);
         transaction.commit();
+        timerPausedToast();
+    }
+
+    public void timerPausedToast(){
+        Toast toast = Toast.makeText(this, "Timer paused", Toast.LENGTH_LONG);
+        toast.show();
     }
 
     public void deleteItem(int position) {
