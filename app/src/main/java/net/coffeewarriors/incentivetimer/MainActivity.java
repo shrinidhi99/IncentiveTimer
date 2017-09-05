@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
         transaction.replace(R.id.content, timerFragment);
-       // transaction.addToBackStack(null);
+        // transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         transaction = manager.beginTransaction();
         transaction.replace(R.id.content, timerFragment);
         if (newIncentiveFragment != null) transaction.remove(newIncentiveFragment);
-       // transaction.addToBackStack(null);
+        // transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -83,9 +83,8 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         incentivesFragment = new IncentivesFragment();
         transaction = manager.beginTransaction();
         transaction.replace(R.id.content, incentivesFragment);
-     //   transaction.addToBackStack(null);
+        //   transaction.addToBackStack(null);
         transaction.commit();
-        timerPausedToast();
     }
 
     public void openNewIncentiveFragment() {
@@ -142,13 +141,8 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         transaction.replace(R.id.content, settingsFragment);
         if (newIncentiveFragment != null) transaction.remove(newIncentiveFragment);
         transaction.commit();
-        timerPausedToast();
     }
 
-    public void timerPausedToast(){
-        Toast toast = Toast.makeText(this, "Timer paused", Toast.LENGTH_LONG);
-        toast.show();
-    }
 
     public void deleteItem(int position) {
         incentivesFragment.deleteItem(position);
@@ -185,6 +179,11 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
     }
 
     public void pauseTimerFragmentChange() {
-        timerFragment.pauseTimerFragmentChange();
+        boolean timerRunning = timerFragment.getTimerRunning();
+        if (timerRunning) {
+            timerFragment.pauseTimerFragmentChange();
+            Toast toast = Toast.makeText(this, "Timer paused", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 }

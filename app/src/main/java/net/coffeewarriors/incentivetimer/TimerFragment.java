@@ -173,10 +173,9 @@ public class TimerFragment extends Fragment {
     public void onPause() {
         super.onPause();
         saveTimerStats();
-     //   pauseTimerFragmentChange();
+        //   pauseTimerFragmentChange();
         mFragmentInactive = true;
     }
-
 
 
     /**
@@ -350,6 +349,10 @@ public class TimerFragment extends Fragment {
             pomodoroTimer.cancel();
             updateResetButtons();
         }
+    }
+
+    public boolean getTimerRunning() {
+        return  mCurrentlyRunning;
     }
 
     public void updateClock() {
@@ -600,4 +603,5 @@ public class TimerFragment extends Fragment {
         }
 
     }
+
 }
