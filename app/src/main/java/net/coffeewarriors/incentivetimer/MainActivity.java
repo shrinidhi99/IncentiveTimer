@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
     public static final String SHARED_PREFERENCES = "SHARED_PREFERENCES";
     public static final String INCENTIVE_LIST = "INCENTIVE_LIST";
 
+    private BottomNavigationView navigation;
     private FragmentManager manager;
     private FragmentTransaction transaction;
     private TimerFragment timerFragment;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         instantiateFragmentsAndManager();
@@ -170,7 +171,12 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
         } else if (editIncentiveFragment != null) {
             closeEditIncentiveFragment();
 
-        } else super.onBackPressed();
+        } else if (!timerFragment.isVisible()) {
+            openTimerFragment();
+            navigation.setSelectedItemId(R.id.navigation_timer);
+
+        }
+            else super.onBackPressed();
     }
 
     @Override
@@ -180,7 +186,8 @@ public class MainActivity extends AppCompatActivity implements TimerFragment.OnF
 
     public void pauseTimerFragmentChange() {
         boolean timerRunning = timerFragment.getTimerRunning();
-        if (timerRunning) {
+        boolean currentlyBreaking = timerFragment.getCurrentlyBreaking();
+        if (timerRunning && !currentlyBreaking) {
             timerFragment.pauseTimerFragmentChange();
             Toast toast = Toast.makeText(this, "Timer paused", Toast.LENGTH_LONG);
             toast.show();

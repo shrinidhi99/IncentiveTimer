@@ -355,6 +355,10 @@ public class TimerFragment extends Fragment {
         return  mCurrentlyRunning;
     }
 
+    public boolean getCurrentlyBreaking() {
+        return mCurrentlyBreaking;
+    }
+
     public void updateClock() {
         int minutes = mMillisLeft / 60000;
         int seconds = (mMillisLeft % 60000) / 1000;
