@@ -13,6 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -32,6 +35,10 @@ import static net.coffeewarriors.incentivetimer.MainActivity.SHARED_PREFERENCES;
  * create an instance of this fragment.
  */
 public class IncentivesFragment extends Fragment {
+
+    private AdView mAdView;
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String INCENTIVE_LIST_PARAM = "INCENTIVE_LIST_PARAM";
@@ -98,6 +105,10 @@ public class IncentivesFragment extends Fragment {
             }
         });
 
+        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544/6300978111");
+        mAdView = (AdView) inf.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         return inf;
     }
