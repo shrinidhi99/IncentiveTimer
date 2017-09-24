@@ -105,9 +105,11 @@ public class IncentivesFragment extends Fragment {
             }
         });
 
-        MobileAds.initialize(getActivity(), "ca-app-pub-3940256099942544/6300978111");
+        MobileAds.initialize(getActivity(), "ca-app-pub-8523485353762681/1628269223");
         mAdView = (AdView) inf.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("4530E445A10D980D67496DBFF2FD1EF7")
+                .build();
         mAdView.loadAd(adRequest);
 
         return inf;
